@@ -7,7 +7,7 @@ const fs = require('fs');
 const io = require('socket.io')(http);
 
 const config = {
-  port: 8080,
+  port: process.env.PORT || 8082,
   entory: './www'
 };
 
