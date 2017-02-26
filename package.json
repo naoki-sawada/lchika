@@ -2,6 +2,7 @@
   "name": "web_json",
   "version": "1.0.0",
   "description": "",
+  "main": "app.js",
   "scripts": {
     "clean": "rm -fr ./www",
     "copy": "cp -r ./src/const ./www",
