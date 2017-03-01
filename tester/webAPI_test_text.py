@@ -2,10 +2,10 @@
 import requests
 import sys
 
-url = 'http://localhost:8082/api'
+url = 'http://localhost:5000/api'
 
 text = u'とっても綺麗なクリスマスツリー'
-client_id = 'ID0001'
+client_id = 'CH001'
 
 argc = len(sys.argv)
 if argc > 1:

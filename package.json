@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -fr ./www",
     "copy:const": "mkdir -p ./www/assets && cp -r ./src/const/img ./www/assets && cp -r ./src/const/css ./www/assets",
-    "copy:jquery": "mkdir -p ./www/js && cp ./src/jquery/* ./www/js/",
+    "copy:jquery": "cp -r ./src/const/js ./www/",
     "copy:top": "cp -r ./src/top/index.html ./www/",
     "copy": "npm run copy:const && npm run copy:jquery && npm run copy:top",
     "init": "npm run clean && npm run copy",

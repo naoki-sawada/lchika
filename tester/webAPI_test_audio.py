@@ -2,11 +2,11 @@
 import requests
 import sys
 
-url = 'http://localhost:8082/api/audio'
+url = 'http://localhost:5000/api/audio'
 
 # audio_fname = 'christmas.mp3'
 audio_fname = 'happychrismas.mp3'
-client_id = 'ID0001'
+client_id = 'CH001'
 
 argc = len(sys.argv)
 if argc > 1:
