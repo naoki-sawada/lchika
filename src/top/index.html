@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>lchika</title>
+    <link id="css" rel="stylesheet" v-bind:href="name">
+</head>
+<style>
+    body {
+        font-family:"游ゴシック" , "Yu Gothic","Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+    }
+    #holder {
+      position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width:1300px;
+        height:800px;
+    }
+    .chrismaslogo {
+      position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width:700px;
+        height:700px;
+        z-index: 30;
+    }
+    .credit {
+      position: absolute;
+        right: 5px;
+        bottom: 5px;
+        margin: auto;
+        width:160px;
+        height:10px;
+        z-index: 30;
+        font-size: 10px;
+      color: #444;
+    }
+    .credit a {
+      color: #444;
+      text-decoration: none;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/jquery.svg3dtagcloud.js"></script>
+<script src="js/bundle.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+
+<body>
+  <div id="logo" class="chrismaslogo"><img v-bind:src="name" alt="" width="600px"></div>
+  <div id="holder"></div>
+    <p></p>
+  <video id="video" v-bind:src="name" autoplay loop>
+    <img id="videoImg" v-bind:src="name" alt="Placeholder">
+  </video>
+  <div class=credit>B-Roll provided by <a href="http://www.videezy.com">Videezy.com</a></div>
+</body>
+</html>
