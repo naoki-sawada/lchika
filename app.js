@@ -7,8 +7,8 @@ const fs = require('fs');
 const io = require('socket.io')(http);
 
 const config = {
-  port: process.env.PORT || 8082,
-  entory: './www'
+  port: process.env.PORT || 5000,
+  entory: __dirname + '/www'
 };
 
 app.use(express.static(config.entory));
