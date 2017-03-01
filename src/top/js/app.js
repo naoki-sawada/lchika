@@ -22,7 +22,7 @@ if (idlow.includes('wd')) {
 }
 
 if (idInvalid) {
-  const bgMusic = new Music(`assets/${page}/img/${trans[page].defaltMusic}`);
+  const bgMusic = new Music(`assets/img/${trans[page].defaltMusic}`);
   const tagcloud = new TagCloud(trans[page].tagCloud);
   const postEvent = new PostEvent();
   postEvent.on('text', (data) => {
@@ -44,25 +44,25 @@ if (idInvalid) {
     const logo = new Vue({
       el: '#logo',
       data: {
-        name: `assets/${page}/img/${trans[page].logo}`
+        name: `assets/img/${trans[page].logo}`
       }
     });
     const video = new Vue({
       el: '#video',
       data: {
-        name: `assets/${page}/img/${trans[page].video}`
+        name: `assets/img/${trans[page].video}`
       }
     });
     const videoImg = new Vue({
       el: '#videoImg',
       data: {
-        name: `assets/${page}/img/${trans[page].videoImg}`
+        name: `assets/img/${trans[page].videoImg}`
       }
     });
     const css = new Vue({
       el: '#css',
       data: {
-        name: `assets/${page}/css/main.css`
+        name: `assets/css/main.css`
       }
     });
   }
