@@ -35,7 +35,7 @@ if (idInvalid) {
   postEvent.on('audio', (data) => {
     console.log(data);
     if (data.clientID === id) {
-      bgMusic.reload(data.audio);
+      bgMusic.reload(`assets/img/${data.audio}`);
     }
   });
 
