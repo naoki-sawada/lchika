@@ -2,8 +2,6 @@ import { EventEmitter } from 'events';
 import io from 'socket.io-client';
 import { settings } from '../conf/settings';
 
-console.log(settings);
-
 export class PostEvent extends EventEmitter {
   constructor() {
     super();
