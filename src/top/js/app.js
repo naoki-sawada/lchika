@@ -22,7 +22,7 @@ if (idlow.includes('wd')) {
 }
 
 if (idInvalid) {
-  const bgMusic = new Music(`assets/img/${trans[page].defaltMusic}`);
+  const bgMusic = new Music(`assets/audio/${trans[page].defaltMusic}`);
   const tagcloud = new TagCloud(trans[page].tagCloud);
   const postEvent = new PostEvent();
   postEvent.on('text', (data) => {
@@ -35,7 +35,7 @@ if (idInvalid) {
   postEvent.on('audio', (data) => {
     console.log(data);
     if (data.clientID === id) {
-      bgMusic.reload(`assets/img/${data.audio}`);
+      bgMusic.reload(`assets/audio/${data.audio}`);
     }
   });
 
@@ -50,7 +50,7 @@ if (idInvalid) {
     const video = new Vue({
       el: '#video',
       data: {
-        name: `assets/img/${trans[page].video}`
+        name: `assets/movie/${trans[page].video}`
       }
     });
     const videoImg = new Vue({
