@@ -1,4 +1,4 @@
-export const settings = {
+export const settingsTC = {
   width: 1300,
   height: 800,
   radius: '80%',
