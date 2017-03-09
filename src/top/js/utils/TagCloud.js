@@ -1,4 +1,7 @@
-import { settings } from '../conf/tagCloud';
+import { settingsTC } from '../conf/tagCloud';
+import { settings } from '../conf/settings';
+
+console.log(settings);
 
 export class TagCloud {
   constructor(firstEntries) {
@@ -16,8 +19,10 @@ export class TagCloud {
   }
 
   pushEntries(text) {
+    if (this.entries.length >= settings.maxTextNum) {
+      this.entries.shift();
+    }
     this.entries.push(this._makeEntries([text])[0]);
-    console.log(this.entries);
   }
 
   remove() {
@@ -26,15 +31,15 @@ export class TagCloud {
   }
 
   firstLoad() {
-    settings.entries = this.entries;
+    settingsTC.entries = this.entries;
     let holderObj = document.getElementById('holder');
-    let svg3DTagCloud = new SVG3DTagCloud(holderObj, settings);
+    let svg3DTagCloud = new SVG3DTagCloud(holderObj, settingsTC);
   }
 
   load() {
     this.remove();
-    settings.entries = this.entries;
+    settingsTC.entries = this.entries;
     let holderObj = document.getElementById('holder');
-    let svg3DTagCloud = new SVG3DTagCloud(holderObj, settings);
+    let svg3DTagCloud = new SVG3DTagCloud(holderObj, settingsTC);
   }
 }

@@ -4,5 +4,6 @@ export const settings = {
     // address: 'http://localhost:5000'
     address: 'https://lchika.herokuapp.com/'
   },
-  defaltMusic: 'christmas.mp3'
+  defaltMusic: 'christmas.mp3',
+  maxTextNum: 30
 }
