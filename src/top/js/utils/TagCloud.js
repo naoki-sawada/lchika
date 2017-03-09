@@ -1,8 +1,6 @@
 import { settingsTC } from '../conf/tagCloud';
 import { settings } from '../conf/settings';
 
-console.log(settings);
-
 export class TagCloud {
   constructor(firstEntries) {
     this.entries = this._makeEntries(firstEntries);
