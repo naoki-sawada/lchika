@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: __dirname + '/src/top/js/app.js',
@@ -27,6 +28,12 @@ module.exports = {
     ]
   },
   postcss: [ ],
-  plugins: [ ],
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    })
+  ],
   externals: [ ]
 }
