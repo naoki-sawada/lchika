@@ -13,7 +13,7 @@ export const settingsTC = {
   fontFamily: 'Sawarabi Mincho, Oswald, Arial, sans-serif',
   fontSize: '30',
   fontColor: '#333',
-  fontWeight: 'bold',//bold
+  fontWeight: 'normal',//bold
   fontStyle: 'normal',//italic
   fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
   fontToUpperCase: true
