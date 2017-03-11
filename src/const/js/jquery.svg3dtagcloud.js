@@ -42,12 +42,12 @@ THE SOFTWARE.
             fontSize: '15',
             fontColor: '#fff',
             fontWeight: 'normal',//bold
-            fontStyle: 'normal',//italic 
+            fontStyle: 'normal',//italic
             fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
             fontToUpperCase: false
 
         };
-            
+
         //---
 
         if ( params !== undefined )
@@ -94,7 +94,7 @@ THE SOFTWARE.
             element.appendChild( svg );
 
             if ( settings.bgDraw ) {
-        
+
                 bg = document.createElementNS( svgNS, 'rect' );
                 bg.setAttribute( 'x', 0 );
                 bg.setAttribute( 'y', 0 );
@@ -105,7 +105,7 @@ THE SOFTWARE.
             }
 
             //---
-            
+
             addEntries();
             reInit();
             animloop();
@@ -215,24 +215,24 @@ THE SOFTWARE.
         };
 
         function addEntry( index, entryObj, x, y, z ) {
-            
+
             var entry = {};
 
                 entry.element = document.createElementNS( svgNS, 'text' );
                 entry.element.setAttribute( 'x', 0 );
                 entry.element.setAttribute( 'y', 0 );
-                entry.element.setAttribute( 'fill', settings.fontColor );
-                entry.element.setAttribute( 'font-family', settings.fontFamily );
-                entry.element.setAttribute( 'font-size', settings.fontSize );
-                entry.element.setAttribute( 'font-weight', settings.fontWeight );
-                entry.element.setAttribute( 'font-style', settings.fontStyle );
-                entry.element.setAttribute( 'font-stretch', settings.fontStretch );
+                entry.element.setAttribute( 'fill', entryObj.fontColor || settings.fontColor );
+                entry.element.setAttribute( 'font-family', entryObj.fontFamily || settings.fontFamily );
+                entry.element.setAttribute( 'font-size', entryObj.fontSize || settings.fontSize );
+                entry.element.setAttribute( 'font-weight', entryObj.fontWeight || settings.fontWeight );
+                entry.element.setAttribute( 'font-style', entryObj.fontStyle || settings.fontStyle );
+                entry.element.setAttribute( 'font-stretch', entryObj.fontStretch || settings.fontStretch );
                 entry.element.setAttribute( 'text-anchor', 'middle' );
                 entry.element.textContent = settings.fontToUpperCase ? entryObj.label.toUpperCase() : entryObj.label;
 
                 entry.link = document.createElementNS( svgNS, 'a' );
-                entry.link.setAttributeNS( 'http://www.w3.org/1999/xlink', 'xlink:href', entryObj.url );
-                entry.link.setAttribute( 'target', entryObj.target );
+                entry.link.setAttributeNS( 'http://www.w3.org/1999/xlink', 'xlink:href', entryObj.url || '' );
+                entry.link.setAttribute( 'target', entryObj.target || '_top' );
                 entry.link.addEventListener( 'mouseover', mouseOverHandler, true );
                 entry.link.addEventListener( 'mouseout', mouseOutHandler, true );
                 entry.link.appendChild( entry.element );
@@ -244,9 +244,9 @@ THE SOFTWARE.
                 entry.vector2D = { x:0, y:0 };
 
             svg.appendChild( entry.link );
-                
+
             return entry;
-        
+
         };
 
         function addEntries() {
@@ -261,11 +261,11 @@ THE SOFTWARE.
                 var z = Math.cos( phi );
 
                 var entry = addEntry( i - 1, settings.entries[ i - 1 ], x, y, z );
-                
+
                 entryHolder.push( entry );
-            
+
             }
-        
+
         };
 
         function getEntryByElement( element ) {
@@ -274,7 +274,7 @@ THE SOFTWARE.
 
                 var entry = entryHolder[ i ];
 
-                if ( entry.element.getAttribute( 'x' ) === element.getAttribute( 'x' ) && 
+                if ( entry.element.getAttribute( 'x' ) === element.getAttribute( 'x' ) &&
                      entry.element.getAttribute( 'y' ) === element.getAttribute( 'y' ) ) {
 
                     return entry;
@@ -297,25 +297,25 @@ THE SOFTWARE.
 
                 if ( e.index === entry.index ) {
 
-                    e.mouseOver = true; 
+                    e.mouseOver = true;
 
                 } else {
 
-                    e.mouseOver = false; 
+                    e.mouseOver = false;
 
                 }
 
-            } 
+            }
 
         };
-        
+
         //---
-            
+
         function render() {
 
             var fx = speed.x * mousePos.x - settings.speed;
             var fy = settings.speed - speed.y * mousePos.y;
-            
+
             var angleX = fx * MATHPI180;
             var angleY = fy * MATHPI180;
 
@@ -327,7 +327,7 @@ THE SOFTWARE.
             //---
 
             for ( var i = 0, l = entryHolder.length; i < l; i++ ) {
-    
+
                 var entry = entryHolder[ i ];
 
                 //---
@@ -347,9 +347,9 @@ THE SOFTWARE.
 
                 var scale = settings.fov / ( settings.fov + entry.vectorPosition.z );
 
-                entry.vector2D.x = entry.vectorPosition.x * scale + center2D.x; 
+                entry.vector2D.x = entry.vectorPosition.x * scale + center2D.x;
                 entry.vector2D.y = entry.vectorPosition.y * scale + center2D.y;
-                
+
                 //---
 
                 entry.element.setAttribute( 'x', entry.vector2D.x );
@@ -386,7 +386,7 @@ THE SOFTWARE.
                 }
 
                 entry.element.setAttribute( 'opacity', opacity );
-                
+
             }
 
             //---
@@ -411,7 +411,7 @@ THE SOFTWARE.
                     };
 
         } )();
-            
+
         function animloop() {
 
             requestAnimFrame( animloop );
@@ -450,10 +450,10 @@ THE SOFTWARE.
 
             var rect = svg.getBoundingClientRect();
 
-            return { 
+            return {
 
-                x: event.clientX - rect.left, 
-                y: event.clientY - rect.top 
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top
 
             };
 
@@ -466,11 +466,11 @@ THE SOFTWARE.
             reInit();
 
         };
-        
+
         //---
 
         init();
- 
+
     };
 
     window.SVG3DTagCloud = SVG3DTagCloud;
@@ -480,7 +480,7 @@ THE SOFTWARE.
 if ( typeof jQuery !== 'undefined' ) {
 
     ( function( $ ) {
-        
+
         $.fn.svg3DTagCloud = function( params ) {
 
             return this.each( function() {
@@ -489,12 +489,12 @@ if ( typeof jQuery !== 'undefined' ) {
 
                     $.data( this, 'plugin_SVG3DTagCloud', new SVG3DTagCloud( this, params ) );
 
-                } 
+                }
 
             } );
 
         };
-        
+
     } ( jQuery ) );
 
 }

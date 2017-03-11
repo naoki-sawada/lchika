@@ -10,17 +10,25 @@ export class TagCloud {
   _makeEntries(texts) {
     let entries = [];
     for (let i = 0; i < texts.length; i++) {
-      let obj = { label: texts[i], url: '', target: '_top' };
+      let obj = { label: texts[i] };
       entries.push(obj);
     }
     return entries;
   }
 
+  _clearNewMark() {
+    // reset all elements to default.
+    this.entries.forEach((val, index, arr) => {
+      this.entries[index] = { label: val.label };
+    });
+  }
+
   pushEntries(text) {
+    this._clearNewMark();
     if (this.entries.length >= settings.maxTextNum) {
       this.entries.shift();
     }
-    this.entries.push(this._makeEntries([text])[0]);
+    this.entries.push({ label: text, fontColor: '#ff0000', fontWeight: 'bold' });
   }
 
   remove() {
