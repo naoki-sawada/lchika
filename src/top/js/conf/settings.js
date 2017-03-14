@@ -1,9 +1,9 @@
 export const settings = {
-  clientID: 'CH001',
+  clientID: 'EV001',
   socketio: {
     address: 'http://localhost:5000'
     // address: 'https://lchika.herokuapp.com/'
   },
-  defaltMusic: 'christmas.mp3',
+  defaltMusic: '11th-beat.mp3',
   maxTextNum: 30
 }

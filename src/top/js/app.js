@@ -15,6 +15,8 @@ if (idlow.includes('wd')) {
   page = 'wedding';
 } else if (idlow.includes('ch')) {
   page = 'christmas';
+} else if (idlow.includes('ev')) {
+  page = 'event';
 } else if (idlow.includes('vl')) {
   page = 'valentine';
 } else {

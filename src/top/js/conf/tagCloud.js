@@ -1,5 +1,5 @@
 export const settingsTC = {
-  width: 1300,
+  width: 1500,
   height: 800,
   radius: '80%',
   radiusMin: 75,
