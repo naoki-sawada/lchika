@@ -23,7 +23,7 @@ import trans from './trans';
 //   idInvalid = false;
 // }
 
-const id = 'ev001';
+const id = 'EV001';
 const page = 'event';
 const idInvalid = true;
 
