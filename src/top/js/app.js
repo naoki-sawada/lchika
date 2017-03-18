@@ -5,23 +5,27 @@ import { TagCloud } from './utils/TagCloud';
 import { PostEvent } from './utils/PostEvent';
 import trans from './trans';
 
-const clientId = new ClientId();
-const id = clientId.get();
+// const clientId = new ClientId();
+// const id = clientId.get();
+//
+// const idlow = id.toLowerCase();
+// let page = '';
+// let idInvalid = true;
+// if (idlow.includes('wd')) {
+//   page = 'wedding';
+// } else if (idlow.includes('ch')) {
+//   page = 'christmas';
+// } else if (idlow.includes('ev')) {
+//   page = 'event';
+// } else if (idlow.includes('vl')) {
+//   page = 'valentine';
+// } else {
+//   idInvalid = false;
+// }
 
-const idlow = id.toLowerCase();
-let page = '';
-let idInvalid = true;
-if (idlow.includes('wd')) {
-  page = 'wedding';
-} else if (idlow.includes('ch')) {
-  page = 'christmas';
-} else if (idlow.includes('ev')) {
-  page = 'event';
-} else if (idlow.includes('vl')) {
-  page = 'valentine';
-} else {
-  idInvalid = false;
-}
+const idlow = '001';
+const page = 'event';
+const idInvalid = true;
 
 if (idInvalid) {
   const bgMusic = new Music(`assets/audio/${trans[page].defaltMusic}`);
