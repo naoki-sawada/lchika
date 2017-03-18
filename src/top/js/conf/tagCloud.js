@@ -1,7 +1,7 @@
 export const settingsTC = {
   width: 1920,
-  height: 1000,
-  radius: '80%',
+  height: 1080,
+  radius: '79%',
   radiusMin: 75,
   bgDraw: true,
   bgColor: 'none',
