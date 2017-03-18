@@ -17,4 +17,4 @@ if argc > 2:
 payload = {'audio': audio_fname, 'clientID': client_id}
 
 r = requests.post(url, json=payload)
-print(r.text)
+#print(r.text)

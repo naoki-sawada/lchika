@@ -1,6 +1,6 @@
 export const settingsTC = {
-  width: 1500,
-  height: 800,
+  width: 1920,
+  height: 1000,
   radius: '80%',
   radiusMin: 75,
   bgDraw: true,
@@ -9,9 +9,9 @@ export const settingsTC = {
   opacityOut: 0.05,
   opacitySpeed: 6,
   fov: 800,
-  speed: 1,
+  speed: .7,
   fontFamily: 'Sawarabi Mincho, Oswald, Arial, sans-serif',
-  fontSize: '30',
+  fontSize: '40',
   fontColor: '#333',
   fontWeight: 'normal',//bold
   fontStyle: 'normal',//italic

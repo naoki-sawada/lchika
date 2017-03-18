@@ -28,7 +28,7 @@ export class TagCloud {
     if (this.entries.length >= settings.maxTextNum) {
       this.entries.shift();
     }
-    this.entries.push({ label: text, fontColor: '#ff0000', fontWeight: 'bold' });
+    this.entries.push({ label: text, fontColor: '#ff18c1', fontWeight: 'bold' });
   }
 
   remove() {
